@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nasa-screensaver/static/css/main.d1b5af33.css",
-    "main.js": "/nasa-screensaver/static/js/main.2c57af9c.js",
+    "main.css": "/nasa-screensaver/static/css/main.0f0b1b3b.css",
+    "main.js": "/nasa-screensaver/static/js/main.4e9700a5.js",
     "index.html": "/nasa-screensaver/index.html",
-    "main.d1b5af33.css.map": "/nasa-screensaver/static/css/main.d1b5af33.css.map",
-    "main.2c57af9c.js.map": "/nasa-screensaver/static/js/main.2c57af9c.js.map"
+    "main.0f0b1b3b.css.map": "/nasa-screensaver/static/css/main.0f0b1b3b.css.map",
+    "main.4e9700a5.js.map": "/nasa-screensaver/static/js/main.4e9700a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1b5af33.css",
-    "static/js/main.2c57af9c.js"
+    "static/css/main.0f0b1b3b.css",
+    "static/js/main.4e9700a5.js"
   ]
 }
