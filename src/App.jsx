@@ -15,7 +15,6 @@ const getRandInt = (max, min) => {
 const App = () => {
   const [ APOD_url, setAPOD_url ] = useState(null);
   const [ APOD_txt, setAPOD_txt ] = useState(null);
-  const [ randomDate, setRandomDate ] = useState(null);
   const [ refresh, setRefresh ] = useState(0);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const App = () => {
     let month = getRandInt(12);
     let year = getRandInt(new Date().getFullYear(), MIN_YEAR);
 
-    axios.get(nasaURL + Api_Info.apikey + "&date=" + "2021-" + month + "-" + day)
+    axios.get(nasaURL + Api_Info.apikey + "&date=" + year + "-" + month + "-" + day)
       .then(response => {
         setAPOD_url(response.data.hdurl);
         setAPOD_txt(response.data.title);
