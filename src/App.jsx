@@ -20,7 +20,7 @@ const App = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRefresh(Math.random());
-    }, 30000);
+    }, 60000);
 
     let day = getRandInt(30);
     let month = getRandInt(12);
