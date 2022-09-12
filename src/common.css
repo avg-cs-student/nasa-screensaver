@@ -1,16 +1,31 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 
 .img-container {
   display: grid;
   height: 100vh;
-  background-color: black;
 }
 
 .img-center {
   max-width: 100%;
   max-height: 100vh;
   margin: auto;
+}
+
+.img-desc-title {
+  color: lightgrey;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 5vh; 
+}
+
+.img-desc {
+  color: lightgrey;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  text-align: center;
+  font-size: 18px; /* Max agreed that 18 was far superior to 14 */
 }

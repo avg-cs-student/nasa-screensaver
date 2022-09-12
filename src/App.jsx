@@ -15,6 +15,7 @@ const getRandInt = (max, min) => {
 const App = () => {
   const [ APOD_url, setAPOD_url ] = useState(null);
   const [ APOD_txt, setAPOD_txt ] = useState(null);
+  const [ APOD_exp, setAPOD_exp ] = useState(null);
   const [ refresh, setRefresh ] = useState(0);
 
   useEffect(() => {
@@ -22,14 +23,20 @@ const App = () => {
       setRefresh(Math.random());
     }, 60000);
 
-    let day = getRandInt(30);
     let month = getRandInt(12);
+    let day;
+    if (month === 2) {
+      day = getRandInt(28); /* Bc February is complicated */
+    } else {
+      day = getRandInt(30); /* the 31st days arent that cool anyways */
+    }
     let year = getRandInt(new Date().getFullYear(), MIN_YEAR);
 
     axios.get(nasaURL + Api_Info.apikey + "&date=" + year + "-" + month + "-" + day)
       .then(response => {
         setAPOD_url(response.data.hdurl);
         setAPOD_txt(response.data.title);
+        setAPOD_exp(response.data.explanation);
         if (!response.data.media_type.includes("image")) {
           setRefresh(Math.random());
         }
@@ -43,7 +50,9 @@ const App = () => {
 
   return (
     <div className="img-container">
+      <p className="img-desc-title">{APOD_txt}</p>
       <img className="img-center" src={APOD_url} alt={APOD_txt}/>
+      <p className="img-desc">{APOD_exp}</p>
     </div>
   );
 };
