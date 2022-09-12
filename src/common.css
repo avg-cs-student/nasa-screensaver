@@ -24,8 +24,15 @@
 
 .img-desc {
   color: lightgrey;
+  margin-top: 3vh;
   margin-left: 20vw;
   margin-right: 20vw;
   text-align: center;
   font-size: 18px; /* Max agreed that 18 was far superior to 14 */
+}
+
+.footnote {
+  color: grey;
+  font-size: 16px;
+  text-align: center;
 }
