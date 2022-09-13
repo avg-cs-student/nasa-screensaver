@@ -25,7 +25,7 @@ const App = () => {
     }, 60000);
 
     month = getRandInt(12);
-    today = new Date();
+    let today = new Date();
 
     if (month > today.getMonth()) {
       year = getRandInt(today.getFullYear() - 1, MIN_YEAR);
