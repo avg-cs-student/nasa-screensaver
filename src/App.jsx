@@ -8,8 +8,8 @@ const MIN_YEAR = 1996; /* Nasa APOD began 07/1995. This ensures our date is alwa
 
 const getRandInt = (max, min) => {
   min = min | 1;
-  let rand = Math.floor(Math.random() * max);
-  return rand > min ? rand : min;
+  let rand = Math.floor(Math.random() * (max - min)) + min;
+  return rand;
 }
 let year, month, day;
 
@@ -25,12 +25,19 @@ const App = () => {
     }, 60000);
 
     month = getRandInt(12);
+    today = new Date();
+
+    if (month > today.getMonth()) {
+      year = getRandInt(today.getFullYear() - 1, MIN_YEAR);
+    } else {
+      year = getRandInt(today.getFullYear(), MIN_YEAR);
+    }
+
     if (month === 2) {
       day = getRandInt(28); /* Bc February is complicated */
     } else {
       day = getRandInt(30); /* the 31st days arent that cool anyways */
     }
-    year = getRandInt(new Date().getFullYear(), MIN_YEAR);
 
     axios.get(nasaURL + Api_Info.apikey + "&date=" + year + "-" + month + "-" + day)
       .then(response => {
